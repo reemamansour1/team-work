@@ -1,31 +1,51 @@
-import './App.css';
-import { Grid , AppBar , Toolbar , Typography , makeStyles } from '@material-ui/core'
+import React from 'react';
+import Home from './component/Home/Home';
+import SignIn from './component/Sign/SignIn';
+import { Grid } from '@material-ui/core';
+import { BrowserRouter as Router , Route , Switch } from "react-router-dom";
 function App() {
-const useStyles = makeStyles({
-  Appbar : {
-    'background-color' : '#cb997e' , 
-    height : '77px'
-  } , 
-  text : {
-    'font-size' : '20px' , 
-     color : 'black' , 
-     'font-style' : 'bold'
+// const useStyles = makeStyles({
+//   Appbar : {
+//     'background-color' : '#aa765a' , 
+//     height : '77px'
+//   } , 
+//   text : {
+//     'font-size' : '20px' , 
+//      color : 'white' , 
+//      'font-weight' : 'bold'
 
 
-  }
-})
-const classes = useStyles()
+//   }
+// })
+// const classes = useStyles()
   return (
 
     <Grid>
-      <AppBar className={classes.Appbar}>
-        <Toolbar>
-          <Typography className = {classes.text}>Healthy lifestyle</Typography>
-        </Toolbar>
-         </AppBar>
+      <Router>
+        <Switch>
+          <Route exact path = "/" component={SignIn}/>
+          <Route exact path = "/Home" component={Home}/>
+        </Switch>
+      </Router>
+      
+    
     
     </Grid>
   );
 }
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
